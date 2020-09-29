@@ -1,5 +1,12 @@
 sceneSetups:
 - path: Assets/Scenes/start menu.unity
+<<<<<<< HEAD
+=======
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/basic.unity
+>>>>>>> 2beee2ae938dd2721886fd6ad464bd235a56488a
   isLoaded: 0
   isActive: 0
   isSubScene: 0
@@ -8,6 +15,6 @@ sceneSetups:
   isActive: 1
   isSubScene: 0
 - path: Assets/Scenes/K1O.unity
-  isLoaded: 0
-  isActive: 0
+  isLoaded: 1
+  isActive: 1
   isSubScene: 0

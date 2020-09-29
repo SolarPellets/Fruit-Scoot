@@ -12,7 +12,7 @@ public class camera : MonoBehaviour
     void Start()
     {
         offset = target.position - transform.position;
-        offset = new Vector3(offset.x - 7, offset.y - 2, offset.z - 7);
+        offset = new Vector3(offset.x, offset.y, offset.z - 2);
     }
 
     // Update is called once per frame
