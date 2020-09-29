@@ -25,9 +25,11 @@ public class banana : MonoBehaviour
         rb.velocity = new Vector3(v.x * speed, currentY, v.z * speed);
     }
     void Update(){
-    	if(Input.GetAxis("Jump") > 0 && pauseTimer == 0){
-    		paused = !paused;
-    		pauseTimer = 60;
+    	if(Input.GetAxisRaw("Jump") * Time.unscaledDeltaTime > 0){
+    		if(pauseTimer < 0){
+    			paused = !paused;
+    			pauseTimer = 3;
+    		}
     	}
     	if(paused == true){
     		Time.timeScale = 0;
@@ -35,6 +37,6 @@ public class banana : MonoBehaviour
     	else{
     		Time.timeScale = 1;
     	}
-    	pauseTimer -= 1;
+    	pauseTimer -= Time.unscaledDeltaTime;
     }
 }
