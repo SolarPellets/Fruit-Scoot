@@ -27,31 +27,37 @@ public class playButton : MonoBehaviour
         Lemon.onClick.AddListener(TaskLemon);
         Banana.onClick.AddListener(TaskBanana);
         Grapes.onClick.AddListener(TaskGrapes);
+        Orange.transform.localScale = new Vector3(0,0,0);
+        Apple.transform.localScale = new Vector3(0,0,0);
+        Lemon.transform.localScale = new Vector3(0,0,0);
+        Banana.transform.localScale = new Vector3(0,0,0);
+        Grapes.transform.localScale = new Vector3(0,0,0);
+        Back.transform.localScale = new Vector3(0,0,0);
     }
 
     // Update is called once per frame
     void TaskPlay()
     {
-        Orange.image.rectTransform.sizeDelta = new Vector3(1,1,1);
-        Apple.image.rectTransform.sizeDelta = new Vector3(1,1,1);
-        Lemon.image.rectTransform.sizeDelta = new Vector3(1,1,1);
-        Banana.image.rectTransform.sizeDelta = new Vector3(1,1,1);
-        Grapes.image.rectTransform.sizeDelta = new Vector3(1,1,1);
-        Back.image.rectTransform.sizeDelta = new Vector3(1,1,1);
-        play.image.rectTransform.sizeDelta = new Vector3(0,0,0);
-        options.image.rectTransform.sizeDelta = new Vector3(0,0,0);
-        exit.image.rectTransform.sizeDelta = new Vector3(0,0,0);
+        Orange.transform.localScale = new Vector3(1,1,1);
+        Apple.transform.localScale = new Vector3(1,1,1);
+        Lemon.transform.localScale = new Vector3(1,1,1);
+        Banana.transform.localScale = new Vector3(1,1,1);
+        Grapes.transform.localScale = new Vector3(1,1,1);
+        Back.transform.localScale = new Vector3(1,1,1);
+        play.transform.localScale = new Vector3(0,0,0);
+        options.transform.localScale = new Vector3(0,0,0);
+        exit.transform.localScale = new Vector3(0,0,0);
     }
     void TaskBack(){
-    	Orange.image.rectTransform.sizeDelta = new Vector2(0,0);
-        Apple.image.rectTransform.sizeDelta = new Vector2(0,0);
-        Lemon.image.rectTransform.sizeDelta = new Vector2(0,0);
-        Banana.image.rectTransform.sizeDelta = new Vector2(0,0);
-        Grapes.image.rectTransform.sizeDelta = new Vector2(0,0);
-        Back.image.rectTransform.sizeDelta = new Vector2(0,0);
-        play.image.rectTransform.sizeDelta = new Vector2(1,1);
-        options.image.rectTransform.sizeDelta = new Vector2(1,1);
-        exit.image.rectTransform.sizeDelta = new Vector2(1,1);
+    	Orange.transform.localScale = new Vector3(0,0,0);
+        Apple.transform.localScale = new Vector3(0,0,0);
+        Lemon.transform.localScale = new Vector3(0,0,0);
+        Banana.transform.localScale = new Vector3(0,0,0);
+        Grapes.transform.localScale = new Vector3(0,0,0);
+        Back.transform.localScale = new Vector3(0,0,0);
+        play.transform.localScale = new Vector3(1,1,1);
+        options.transform.localScale = new Vector3(1,1,1);
+        exit.transform.localScale = new Vector3(1,1,1);
     }
     void TaskOptions(){
     
