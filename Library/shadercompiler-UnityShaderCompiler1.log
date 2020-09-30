@@ -1,4 +1,4 @@
-Base path: '/Applications/Unity/Hub/Editor/2020.1.6f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2020.1.6f1/PlaybackEngines'
+Base path: '/home/aiden/Unity/Hub/Editor/2020.1.6f1/Editor/Data', plugins path '/home/aiden/Unity/Hub/Editor/2020.1.6f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
 
 Quitting shader compiler process
