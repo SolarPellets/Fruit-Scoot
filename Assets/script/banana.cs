@@ -11,7 +11,7 @@ public class banana : MonoBehaviour
     private float pauseTimer;
     public bool jellied;
     public bool colliding;
-
+    public string fruit;
     void Start(){
         rb = GetComponent<Rigidbody>();
     }
