@@ -14,12 +14,16 @@ public class banana : MonoBehaviour
     public bool colliding;
     public string fruit;
     public float currentY;
+    public bool cake;
     void Start(){
         rb = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate(){
     	if(colliding == true){
+    		if(cake == true){
+    			currentY = 0;
+    		}
     		if(currentY < -10){
     			transform.position = new Vector3(-11f, 23f, 73f);
     		}
@@ -59,6 +63,15 @@ public class banana : MonoBehaviour
         if(collision.gameObject.tag == "jelly"){
         	jellied = true;
         	jelliedTimer = 1500f;
+        }
+        if(collision.gameObject.tag == "cake"){
+        	cake = true;
+        }
+        else{
+        	cake = false;
+        }
+        if(collision.gameObject.tag == "knife"){
+        	transform.position = new Vector3(-11f, 23f, 73f);
         }
     }
     void OnCollisionExit(Collision collision){
