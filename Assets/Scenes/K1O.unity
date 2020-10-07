@@ -7079,7 +7079,7 @@ GameObject:
   - component: {fileID: 3189842656558996656}
   m_Layer: 0
   m_Name: Cube.009
-  m_TagString: Untagged
+  m_TagString: jelly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13002,7 +13002,10 @@ MonoBehaviour:
   rb: {fileID: 6340993958404378320}
   target: {fileID: 1074883993}
   jellied: 0
+  jelliedTimer: 0
   colliding: 0
+  fruit: 
+  currentY: 0
 --- !u!54 &6340993958404378320
 Rigidbody:
   m_ObjectHideFlags: 0
