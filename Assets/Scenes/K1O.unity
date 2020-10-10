@@ -4553,7 +4553,7 @@ GameObject:
   - component: {fileID: 1788311175387709851}
   m_Layer: 0
   m_Name: knifeblock.001
-  m_TagString: Untagged
+  m_TagString: knife
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13006,6 +13006,7 @@ MonoBehaviour:
   colliding: 0
   fruit: 
   currentY: 0
+  cake: 0
 --- !u!54 &6340993958404378320
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14003,7 +14004,7 @@ GameObject:
   - component: {fileID: 6814979758323147285}
   m_Layer: 0
   m_Name: Cylinder.007_Cylinder.009
-  m_TagString: Untagged
+  m_TagString: cake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
