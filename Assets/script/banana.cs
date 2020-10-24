@@ -10,14 +10,25 @@ public class banana : MonoBehaviour
     private bool paused;
     private float pauseTimer;
     public bool jellied;
+    public float jelliedTimer;
     public bool colliding;
-
+    public string fruit;
+    public float currentY;
+    public bool cake;
     void Start(){
         rb = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate(){
-        float currentY = rb.velocity.y;
+    	if(colliding == true){
+    		if(cake == true){
+    			currentY = 0;
+    		}
+    		if(currentY < -10){
+    			transform.position = new Vector3(-11f, 23f, 73f);
+    		}
+    	}
+        currentY = rb.velocity.y;
         Vector3 forward = target.forward * -Input.GetAxis("Horizontal");
         Vector3 right = target.right * Input.GetAxis("Vertical");
         Vector3 v = forward + right;
@@ -25,6 +36,10 @@ public class banana : MonoBehaviour
             if(Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0){
                 currentY += 1;
             }
+        }
+        jelliedTimer -= 1;
+        if(jelliedTimer == 0f){
+        	jellied = false;
         }
         rb.velocity = new Vector3(v.x * speed, currentY, v.z * speed);
     }
@@ -45,6 +60,19 @@ public class banana : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision){
         colliding = true;
+        if(collision.gameObject.tag == "jelly"){
+        	jellied = true;
+        	jelliedTimer = 1500f;
+        }
+        if(collision.gameObject.tag == "cake"){
+        	cake = true;
+        }
+        else{
+        	cake = false;
+        }
+        if(collision.gameObject.tag == "knife"){
+        	transform.position = new Vector3(-11f, 23f, 73f);
+        }
     }
     void OnCollisionExit(Collision collision){
         colliding = false;
