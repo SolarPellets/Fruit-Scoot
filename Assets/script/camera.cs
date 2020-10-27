@@ -12,7 +12,9 @@ public class camera : MonoBehaviour
     void Start()
     {
         offset = target.position - transform.position;
-        offset = new Vector3(offset.x, offset.y, offset.z - 2);
+        if(player.gameObject.name == "apple"){
+        	offset = new Vector3(offset.x - 25f, offset.y, offset.z + 12.5f);
+        }   
     }
 
     // Update is called once per frame
