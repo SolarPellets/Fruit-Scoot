@@ -16,10 +16,9 @@ public class playButton : MonoBehaviour
 	public Button Grapes;
 	public Button Back;
 	public Button reset;
-	public Button load;
-	public Button save;
 	public static float levelsU;
 	public GameObject optionsS;
+	public static int levelsUnlocked;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,21 +31,18 @@ public class playButton : MonoBehaviour
         Lemon.onClick.AddListener(TaskLemon);
         Banana.onClick.AddListener(TaskBanana);
         Grapes.onClick.AddListener(TaskGrapes);
+        reset.onClick.AddListener(TaskReset);
         Orange.transform.localScale = new Vector3(0,0,0);
         Apple.transform.localScale = new Vector3(0,0,0);
         Lemon.transform.localScale = new Vector3(0,0,0);
         Banana.transform.localScale = new Vector3(0,0,0);
         Grapes.transform.localScale = new Vector3(0,0,0);
-        save.transform.localScale = new Vector3(0,0,0);
         Back.transform.localScale = new Vector3(0,0,0);
-        load.transform.localScale = new Vector3(0,0,0);
         reset.transform.localScale = new Vector3(0,0,0);
+        levelsUnlocked = PlayerPrefs.GetInt("levels", 0);
     }
 
     // Update is called once per frame
-    void Update(){
-    	levelsU = option.levelsUnlocked;
-    }
     void TaskPlay()
     {
         Orange.transform.localScale = new Vector3(1,1,1);
@@ -66,9 +62,7 @@ public class playButton : MonoBehaviour
         Banana.transform.localScale = new Vector3(0,0,0);
         Grapes.transform.localScale = new Vector3(0,0,0);
         Back.transform.localScale = new Vector3(0,0,0);
-        load.transform.localScale = new Vector3(0,0,0);
         reset.transform.localScale = new Vector3(0,0,0);
-        save.transform.localScale = new Vector3(0,0,0);
         play.transform.localScale = new Vector3(1,1,1);
         Options.transform.localScale = new Vector3(1,1,1);
         exit.transform.localScale = new Vector3(1,1,1);
@@ -78,32 +72,33 @@ public class playButton : MonoBehaviour
         Options.transform.localScale = new Vector3(0,0,0);
         exit.transform.localScale = new Vector3(0,0,0);
         Back.transform.localScale = new Vector3(1,1,1);
-        load.transform.localScale = new Vector3(1,1,1);
         reset.transform.localScale = new Vector3(1,1,1);
-        save.transform.localScale = new Vector3(1,1,1);
     }
     void TaskOrange(){
     	SceneManager.LoadScene("K1O");
     }
     void TaskApple(){
-    	if(levelsU > 0){
+    	if(levelsUnlocked > 0){
     		SceneManager.LoadScene("K1A");
     	}
     }
     void TaskLemon(){
-    	if(levelsU > 1){
+    	if(levelsUnlocked > 1){
     		SceneManager.LoadScene("K1L");
     	}
     }
     void TaskBanana(){
-    	if(levelsU > 2){
+    	if(levelsUnlocked > 2){
     		SceneManager.LoadScene("K1B");
     	}
     }
     void TaskGrapes(){
-    	if(levelsU > 3){
+    	if(levelsUnlocked > 3){
     		SceneManager.LoadScene("K1G");
     	}
+    }
+    void TaskReset(){
+    	PlayerPrefs.SetInt("levels", 0);
     }
     void TaskExit(){
     	Application.Quit();
