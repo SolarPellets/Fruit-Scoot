@@ -17,8 +17,6 @@ public class playButton : MonoBehaviour
 	public Button Back;
 	public Button reset;
 	public static float levelsU;
-	public GameObject optionsS;
-	public static int levelsUnlocked;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +29,6 @@ public class playButton : MonoBehaviour
         Lemon.onClick.AddListener(TaskLemon);
         Banana.onClick.AddListener(TaskBanana);
         Grapes.onClick.AddListener(TaskGrapes);
-        reset.onClick.AddListener(TaskReset);
         Orange.transform.localScale = new Vector3(0,0,0);
         Apple.transform.localScale = new Vector3(0,0,0);
         Lemon.transform.localScale = new Vector3(0,0,0);
@@ -39,10 +36,12 @@ public class playButton : MonoBehaviour
         Grapes.transform.localScale = new Vector3(0,0,0);
         Back.transform.localScale = new Vector3(0,0,0);
         reset.transform.localScale = new Vector3(0,0,0);
-        levelsUnlocked = PlayerPrefs.GetInt("levels", 0);
     }
 
     // Update is called once per frame
+    void Update(){
+    	levelsU = option.levelsUnlocked;
+    }
     void TaskPlay()
     {
         Orange.transform.localScale = new Vector3(1,1,1);
@@ -78,27 +77,24 @@ public class playButton : MonoBehaviour
     	SceneManager.LoadScene("K1O");
     }
     void TaskApple(){
-    	if(levelsUnlocked > 0){
+    	if(levelsU > 0){
     		SceneManager.LoadScene("K1A");
     	}
     }
     void TaskLemon(){
-    	if(levelsUnlocked > 1){
+    	if(levelsU > 1){
     		SceneManager.LoadScene("K1L");
     	}
     }
     void TaskBanana(){
-    	if(levelsUnlocked > 2){
+    	if(levelsU > 2){
     		SceneManager.LoadScene("K1B");
     	}
     }
     void TaskGrapes(){
-    	if(levelsUnlocked > 3){
+    	if(levelsU > 3){
     		SceneManager.LoadScene("K1G");
     	}
-    }
-    void TaskReset(){
-    	PlayerPrefs.SetInt("levels", 0);
     }
     void TaskExit(){
     	Application.Quit();

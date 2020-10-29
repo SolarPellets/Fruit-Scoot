@@ -26,7 +26,6 @@ public class banana : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         fruitT = GetComponent<Transform>();
         spooned = false;
-        bowl = false;
     }
 
     void FixedUpdate(){
