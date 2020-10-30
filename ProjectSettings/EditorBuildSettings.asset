@@ -6,12 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/opiton.unity
+    guid: 0c1ea07d103481b819adc3ca64135283
+  - enabled: 1
     path: Assets/Scenes/start menu.unity
     guid: 7f96b454d63015b12a94c11c75b9bd51
   - enabled: 1
-    path: Assets/Scenes/basic.unity
-    guid: 33d9df9e4b795321b9c46c5a10e29f87
-  - enabled: 1
     path: Assets/Scenes/K1O.unity
     guid: cfcf1923c7a1d7a95abc9dd633c1cf39
+  - enabled: 1
+    path: Assets/Scenes/K1A.unity
+    guid: 3becf10848b019a39bbc79a39ccdc857
+  - enabled: 1
+    path: Assets/Scenes/K1L.unity
+    guid: 873ea6769eb9608e49bdd98c4cc47e22
+  - enabled: 1
+    path: Assets/Scenes/K1B.unity
+    guid: 5970f715ef732a54ba78869a9b5ab15e
+  - enabled: 1
+    path: Assets/Scenes/K1G.unity
+    guid: b31f178862eba6309bc4de7d7172e2f2
   m_configObjects: {}
