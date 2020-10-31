@@ -26,6 +26,8 @@ public class banana : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         fruitT = GetComponent<Transform>();
         spooned = false;
+        bowl = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void FixedUpdate(){
@@ -35,6 +37,9 @@ public class banana : MonoBehaviour
     			currentY = 0;
     		}
     		if(spooned == true){
+    			currentY = 0;
+    		}
+    		if(bowl == true){
     			currentY = 0;
     		}
     		if(currentY < -10){

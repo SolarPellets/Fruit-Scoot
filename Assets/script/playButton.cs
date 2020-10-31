@@ -20,6 +20,7 @@ public class playButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    	Cursor.lockState = CursorLockMode.None;
         play.onClick.AddListener(TaskPlay);
         exit.onClick.AddListener(TaskExit);
         Back.onClick.AddListener(TaskBack);

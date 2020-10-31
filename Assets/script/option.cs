@@ -62,6 +62,14 @@ public class option : MonoBehaviour
 			SceneManager.LoadScene("start menu");
 			reset.onClick.AddListener(TaskReset);
 		}
+		if(currentScene == "K1G"){
+			if(levelsUnlocked == 3){
+				levelsUnlocked = 5;
+			}
+			PlayerPrefs.SetInt("levels", levelsUnlocked);
+			SceneManager.LoadScene("start menu");
+			reset.onClick.AddListener(TaskReset);
+		}
         	bowlO = false;
         }
     }
